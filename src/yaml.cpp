@@ -130,15 +130,15 @@ bool fromYAMLFile(moveit_msgs::PlanningScene& msg, const std::string& file)
   return scene::YAMLFileToMessage(msg, file);
 }
 
-bool fromYAMLFile(moveit_msgs::MotionPlanRequest& msg, const std::string& file)
-{
-  return scene::YAMLFileToMessage(msg, file);
-}
+// bool fromYAMLFile(moveit_msgs::MotionPlanRequest& msg, const std::string& file)
+// {
+//   return scene::YAMLFileToMessage(msg, file);
+// }
 
-bool fromYAMLFile(moveit_msgs::RobotState& msg, const std::string& file)
-{
-  return scene::YAMLFileToMessage(msg, file);
-}
+// bool fromYAMLFile(moveit_msgs::RobotState& msg, const std::string& file)
+// {
+//   return scene::YAMLFileToMessage(msg, file);
+// }
 
 // using namespace robowflex;
 

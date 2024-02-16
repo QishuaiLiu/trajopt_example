@@ -64,7 +64,7 @@
 #include <moveit/planning_scene/planning_scene.h>
 #include <utils.h>
 
-#define HAS_OBS
+// #define HAS_OBS
 
 bool fromYamlFile(moveit_msgs::PlanningScene& planning_msg, const std::string& file_name)
 {

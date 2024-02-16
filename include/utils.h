@@ -12,6 +12,7 @@
 
 #include <ros/package.h>  // for package resolving
 #include <ros/ros.h>
+#include <yaml.h>
 #include <yaml-cpp/yaml.h>  // for YAML parsing
 #include <moveit/planning_scene/planning_scene.h>
 
@@ -41,20 +42,12 @@ bool isExtension(const std::string& path_string, const std::string& extension);
 
 std::pair<bool, YAML::Node> loadFileToYAML(const std::string& path);
 
-// template <typename T>
-// bool YAMLFileToMessage(T& msg, const std::string& file)
-// {
-//   const auto& result = loadFileToYAML(file);
-//   if (result.first)
-//     msg = result.second.as<T>();
-
-//   return result.first;
-// }
-bool YAMLFileToMessage(moveit_msgs::PlanningScene& msg, const std::string& file)
+template <typename T>
+bool YAMLFileToMessage(T& msg, const std::string& file)
 {
   const auto& result = loadFileToYAML(file);
   if (result.first)
-    msg = result.second.as<moveit_msgs::PlanningScene>();
+    msg = result.second.as<T>();
 
   return result.first;
 }
